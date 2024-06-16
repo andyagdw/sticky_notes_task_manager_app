@@ -1,0 +1,35 @@
+<!-- tasks/templates/edit_task.html -->
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}Edit task{% endblock title %} 
+
+{% block content %}
+<section class="edit-form-section-container">
+    <div class="edit-form-header-container">
+        <h2 class="edit-task-heading">Edit task</h2>
+        <a 
+            href="{% url 'tasks:view_task' task.id %}"
+            class="edit-go-back-to-tasks-link">Go back to task
+        </a>
+    </div>
+    <div class="edit-form-container">
+        <div class="edit-form-div">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button 
+                    type="submit"
+                    class="create-task-button">Save changes
+                </button>
+            </form>
+        </div>
+        <div class="img-container">
+            <img 
+                src="{% static '../static/images/sticky-notes-img.jpg' %}"
+                alt="sticky notes"
+                class="img" />
+        </div>
+    </div>
+</section>
+{% endblock content %}

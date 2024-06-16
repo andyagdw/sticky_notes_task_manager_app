@@ -1,0 +1,152 @@
+<!-- tasks/templates/index.html -->
+{% extends 'base.html' %}
+{% load icons %}
+
+{% block title %}Home Page{% endblock title %}
+
+{% block content %}
+{% if not tasks %}
+  <div class="no-tasks-div">
+    <h2 class="no-tasks-heading">No tasks. Get started below!</h2>
+  </div>
+{% else %}
+  <div class="message-div">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="{{ message.tags }}">
+          {{ message }}
+          <!-- Generates <i class="fa-solid fa-circle-check"></i> -->
+          {% icon 'circle-check' %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="number-of-tasks-div">
+    <h2>You have {{ tasks|length}} task{{tasks|pluralize}}</h2>
+    <div class="tasks-container">
+      <section class="main-tasks-section">
+        <table class="main-tasks-table">
+          <caption>
+            Your tasks
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task in tasks %}
+              <tr>
+                <td>{{ task.title|capfirst }}</td>
+                <td>{{ task.description|truncatechars:20 }}</td>
+                <td>
+                  <a href="{% url 'tasks:view_task' task.id %}">View task<a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      <section class="other-info-section">
+        <aside class="sticky-container">
+          <div class="sticky-div">
+            {% if not tasks_due_today %}
+              <h2 class="stick-div-no-tasks-heading">No tasks due today</h2>
+              {% else %}
+              <table class="sticky-tasks-table">
+                <caption class="sticky-table-caption">
+                  Tasks Due Today
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for task in tasks_due_today %}
+                    <tr>
+                      <td>{{ task.title|capfirst }}</td>
+                      <td>{{ task.description|truncatechars:15 }}</td>
+                      <td>
+                        <a href="{% url 'tasks:view_task' task.id %}">View task
+                        </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endif %}
+          </div>
+          <div class="sticky-div passed-deadline-div">
+            {% if not tasks_passed_deadline %}
+              <h2 class="stick-div-no-tasks-heading">No tasks passed deadline
+              </h2>
+            {% else %}
+              <table class="sticky-tasks-table">
+                <caption class="sticky-table-caption">
+                  Tasks passed deadline
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for task in tasks_passed_deadline %}
+                    <tr>
+                      <td>{{ task.title|capfirst }}</td>
+                      <td>{{ task.description|truncatechars:15 }}</td>
+                      <td>
+                        <a href="{% url 'tasks:view_task' task.id %}">View task
+                        </a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endif %}
+          </div>
+        </aside>
+      </section>
+    </div>
+  </div>
+{% endif %}
+<section class="create-new-task-section">
+  <div class="create-new-task-header-container">
+    <h2 id="create-new-task" class="create-new-task-heading">Create New Task</h2>
+  </div>
+  <form
+    action=""
+    method="post"
+    aria-labelledby="create-new-task"
+    class="create-new-task-form"
+  >
+    {% csrf_token %}
+    {% for field in form %}
+      <div>
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}
+          <span class="help-text">{{ field.help_text }}</span>
+        {% endif %}
+        {% if field.errors %}
+          <div class="error">
+            <ul>
+              {% for error in field.errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    <button type="submit" class="create-task-button">Create Task</button>
+  </form>
+</section>
+{% endblock content %}
