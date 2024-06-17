@@ -65,6 +65,8 @@ Follow these simple steps to get started with the application:
 
 ## Accessing the Database 📊
 
+If you would like to view the database:
+
 1. Download DB Browser. <br />
 Download and install [DB Browser for SQLite](https://sqlitebrowser.org/dl/) as this project uses SQLite.
 
