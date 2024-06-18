@@ -63,21 +63,6 @@ Follow these simple steps to get started with the application:
 
    Click on the link that shows in the terminal to open the application in your browser.
 
-## Accessing the Database 📊
-
-If you would like to view the database:
-
-1. Download DB Browser. <br />
-Download and install [DB Browser for SQLite](https://sqlitebrowser.org/dl/) as this project uses SQLite.
-
-2. Open Database with DB Browser. <br />
-* Open DB Browser and select the 'Open Database' option.
-* Navigate to the project directory and select the database file.
-
-3. Explore the Database. <br />
-* Go to the 'Browse Data' tab.
-* Select the 'tasks_task' table from the dropdown menu to view the tasks data.
-
 You're all set! Start managing your tasks efficiently with the Sticky Notes Task Manager Application 🚀.
 
 ## Credits
