@@ -56,7 +56,7 @@ Follow these simple steps to get started with the application:
    `source venv/bin/activate`
 
 7. Ensure project dependencies are installed: <br />
-   `pip install -r requirments.txt`
+   `pip install -r requirements.txt`
 
 9. Run the following command to start the Django server: <br />
    `python manage.py runserver`
