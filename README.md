@@ -1,9 +1,9 @@
 # Sticky Notes Task Manager Application 💥
 
-## Description ✨
+A sticky notes task manager application that allows users to manage their tasks efficiently. It makes use of the
+'Model-View-Template' pattern.
 
-Using the 'Model-View-Template' pattern, this Sticky Notes Task Manager Application
-allows users to manage their tasks efficiently. Users can:
+## Features ✨
 
 * View all tasks
 * Create new tasks
