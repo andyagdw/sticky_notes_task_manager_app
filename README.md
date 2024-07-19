@@ -24,7 +24,7 @@ Follow these simple steps to get started with the application:
    `cd sticky_notes_task_manager_app`
 4. Open Visual Studio Code: <br />
    `code .`
-5. Set up a virtual environment in Visual Studio Code terminal. <br />
+5. Set up a virtual environment in Visual Studio Code terminal: <br />
 
    Using venv:
 
@@ -39,7 +39,7 @@ Follow these simple steps to get started with the application:
    virtualenv venv
    ```
 
-6. Activate the virtual environment.
+6. Activate the virtual environment:
 
    Using venv:
 
