@@ -11,25 +11,25 @@ A sticky notes task manager application that allows users to manage their tasks 
 * Delete tasks
 * View tasks due today
 * See past deadlines
-* See categories, deadlines, and priorities related to the task they are viewing
+* See categories, deadlines, and priorities related to the task you are viewing
 
 ## Getting started ✅
 
 Follow these simple steps to get started with the application:
 
-1. Ensure that Python and Pip are installed on your machine. <br />
-2. Clone the repository to your local machine: <br />
+### Prerequisite
+- Ensure that Python and Pip are installed on your machine
+
+1. Clone the repository to your local machine: <br>
    `git clone https://github.com/andyagdw/sticky_notes_task_manager_app.git`
-3. Navigate to the project directory: <br />
+2. Navigate to the project directory: <br>
    `cd sticky_notes_task_manager_app`
-4. Open Visual Studio Code: <br />
-   `code .`
-5. Set up a virtual environment in Visual Studio Code terminal: <br />
+3. Set up a virtual environment: <br>
 
    Using venv:
 
-   `python -m venv venv` <br />
-   For Python 3.3 or newer: <br />
+   `python -m venv venv` <br>
+   For Python 3.3 or newer: <br>
    `python3 -m venv venv`
 
    Using virtualenv:
@@ -39,26 +39,26 @@ Follow these simple steps to get started with the application:
    virtualenv venv
    ```
 
-6. Activate the virtual environment:
+5. Activate the virtual environment:
 
    Using venv:
 
-   Windows: <br />
-   `venv\Scripts\activate` <br />
-   Unix\Mac: <br />
+   Windows: <br>
+   `venv\Scripts\activate` <br>
+   Unix\Mac: <br>
    `source venv/bin/activate`
 
-   Using virtualenv: <br />
+   Using virtualenv: <br>
 
-   Windows: <br />
-   `venv\Scripts\activate` <br />
-   Unix\Mac: <br />
+   Windows: <br>
+   `venv\Scripts\activate` <br>
+   Unix\Mac: <br>
    `source venv/bin/activate`
 
-7. Ensure project dependencies are installed: <br />
+6. Ensure that project dependencies are installed: <br>
    `pip install -r requirements.txt`
 
-9. Run the following command to start the Django server: <br />
+7. Run the following command to start the Django server: <br>
    `python manage.py runserver`
 
    Click on the link that shows in the terminal to open the application in your browser.
